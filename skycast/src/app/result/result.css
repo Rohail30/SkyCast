@@ -1,0 +1,64 @@
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 450px;
+  height: 280px;
+  border-radius: 10px;
+  border: solid 1px #c6daeb;
+  background-color: #9cd3fb;
+}
+
+.result .temp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.result .temp h1 {
+  font-size: 40px;
+}
+
+.result .city h2 {
+  font-size: 20px;
+}
+
+.result .comment {
+  font-size: 14px;
+  color: gray;
+}
+
+.result .tail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 85%;
+  height: 70px;
+}
+
+.result .tail .box {
+  width: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.result .tail .box .icon {
+  font-size: 25px;
+}
+
+.result .tail .box .com {
+  color: gray;
+  font-size: 14px;
+}
+
+.result .tail .box .text {
+  font-weight: bold;
+}

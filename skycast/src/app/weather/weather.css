@@ -1,0 +1,77 @@
+/* styles.css */
+.weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 10px;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+}
+
+.weather .title {
+  color: #111827;
+}
+
+.weather .back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.weather .back .i {
+  transition: 0.3s;
+  font-size: 25px;
+}
+
+.weather .back .i:hover {
+  font-size: 30px;
+}
+
+.weather .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 200px;
+  color: #111827;
+  text-align: center;
+}
+
+.weather .title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.weather .subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.weather .search-box {
+  display: flex;
+  gap: 10px;
+}
+
+.weather input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.weather .search-button {
+  outline: none;
+  border: none;
+  background-color: #0168b5;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.weather .search-button:hover {
+  background-color: #111827;
+}
