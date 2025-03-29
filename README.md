@@ -22,8 +22,7 @@ Sky Cast is a simple and interactive weather app built using **Next.js, TypeScri
 
 ---
 
-## 🎥 Demo  
-🔗 [Live Preview](#) *(Add deployment link here if hosted on Vercel/Netlify)*  
+
 
 ---
 
@@ -55,7 +54,10 @@ Sky Cast is a simple and interactive weather app built using **Next.js, TypeScri
 ---
 
 ## 📸 Screenshots  
-*(Add images or GIFs of the app in action here!)*  
+![SkyCast-Landing_Page](https://github.com/user-attachments/assets/894ba47d-b028-402f-bd8c-615ea00c75d9)
+![SkyCast-MainPage](https://github.com/user-attachments/assets/070375f4-fd6a-4eb4-90eb-b6829be8a91d)
+![image](https://github.com/user-attachments/assets/7390448a-1ff7-418f-a7be-b5b7445e5794)
+![image](https://github.com/user-attachments/assets/0d9a3f52-b1b6-4e20-8d8a-9b6de73f86c2)
 
 ---
 
@@ -70,10 +72,7 @@ This project is licensed under the **MIT License**.
 ---
 
 ### 💡 Let's Connect!  
-💻 **GitHub:** [your-username](https://github.com/your-username)  
-🐦 **Twitter:** [your-handle](https://twitter.com/your-handle)  
-🔗 **LinkedIn:** [your-name](https://linkedin.com/in/your-name)  
+💻 **GitHub:** [Rohail30](https://github.com/Rohail30)   
+🔗 **LinkedIn:** [Rohail Rathore](https://linkedin.com/in/rohail-rathore-593389133)  
 
----
 
-Let me know if you want to add more details! 🚀
