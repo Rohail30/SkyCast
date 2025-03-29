@@ -15,43 +15,37 @@ type ResultPageProps = {
 export default function Page({ city }: ResultPageProps) {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [validCity, setValidCity] = useState<string>(''); // Stores the last successful city name
 
   interface WeatherData {
-    weather: [
-      {
-        main: string;
-      }
-    ];
-    main: {
-      temp: number;
-      feels_like: number;
-      humidity: number;
-    };
-    wind: {
-      speed: number;
-    };
+    weather: [{ main: string }];
+    main: { temp: number; feels_like: number; humidity: number };
+    wind: { speed: number };
   }
 
   useEffect(() => {
     const fetchItemDetails = async () => {
+      setLoading(true);
       try {
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=9b5b054d045effbde8e0b96951bbfe9e&units=metric`
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY}&units=metric`
         );
         const data = await response.json();
 
-        // Check for errors. The API returns a code other than 200 if there's an error.
         if (data.cod !== 200) {
           setError('Please enter the correct city name');
           setWeather(null);
         } else {
           setError(null);
           setWeather(data);
+          setValidCity(city); // Store the last valid city name
         }
       } catch (error) {
         console.log('Error fetching item details:', error);
         setError('Error fetching data');
       }
+      setLoading(false);
     };
 
     if (city) {
@@ -68,11 +62,14 @@ export default function Page({ city }: ResultPageProps) {
 
   return (
     <div className="result">
-      {error && <div className="error">{error}</div>}
-      {weather && (
+      {loading && <div className="loading">Loading...</div>}
+      {error && !loading && <div className="error">{error}</div>}
+
+      {weather && !error && !loading && (
         <>
           <div className="city">
-            <h2>{toTitleCase(city)}</h2>
+            <h2>{toTitleCase(validCity)}</h2>{' '}
+            {/* Shows the last valid city name */}
           </div>
           <div className="temp">
             {weather.main?.temp > 25 ? (
@@ -97,13 +94,11 @@ export default function Page({ city }: ResultPageProps) {
             </div>
             <div className="box">
               <IoWaterOutline className="icon" style={{ color: '#448AF7' }} />
-
               <div className="com">Humidity</div>
               <div className="text">{weather.main?.humidity}%</div>
             </div>
             <div className="box">
               <FaWind className="icon" style={{ color: '#14B8A6' }} />
-
               <div className="com">Wind</div>
               <div className="text">{weather.wind?.speed} m/s</div>
             </div>
